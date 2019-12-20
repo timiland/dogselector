@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet" />
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="dogselector.css" />
+  <!--Pacifico Font-->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" />
+
+  <title>Dog Selector</title>
+</head>
+
+<body onload='genDogs();'>
+  <!--  -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="selectorform">
+        <div id="formcloser"><i class="fas fa-times"></i></div>
+        <div class="text-center" id="formheader">
+          <h4 class="h4-responsive" style="margin:0px;">
+            Specify Your Dog's Characteristics
+          </h4>
+        </div>
+        <hr />
+        <!-- Form section -->
+
+        <h5 class="formTitle">Select Dog Size</h5>
+        <div class="collapsecont">
+          <button type="button" class="toggleButton size smallDogs" onclick="toggler(event)">
+            <h6 class="nonclick">Small Dogs</h6>
+          </button>
+          <button type="button" class="toggleButton size medDogs" onclick="toggler(event)">
+            <h6 class="nonclick">Medium Dogs</h6>
+          </button>
+          <button type="button" class="toggleButton size largeDogs" onclick="toggler(event)">
+            <h6 class="nonclick">Large Dogs</h6>
+          </button>
+        </div>
+        <hr />
+        <h5 class="formTitle">Select Coat Length</h5>
+        <div class="collapsecont">
+          <button type="button" class="toggleButton coat shortCoat" onclick="toggler(event)">
+            <h6 class="nonclick">Short Coat</h6>
+          </button>
+          <button type="button" class="toggleButton coat medCoat" onclick="toggler(event)">
+            <h6 class="nonclick">Medium Coat</h6>
+          </button>
+          <button type="button" class="toggleButton coat longCoat" onclick="toggler(event)">
+            <h6 class="nonclick">Long Coat</h6>
+          </button>
+        </div>
+        <hr />
+        <h5 class="formTitle">Select Breed Types</h5>
+        <div class="collapsecont">
+          <button type="button" class="toggleButton breed sporting" onclick="toggler(event)">
+            <h6 class="nonclick">Sporting</h6>
+          </button>
+          <button type="button" class="toggleButton breed non-sporting" onclick="toggler(event)">
+            <h6 class="nonclick">Non-Sporting</h6>
+          </button>
+          <button type="button" class="toggleButton breed working" onclick="toggler(event)">
+            <h6 class="nonclick">Working</h6>
+          </button>
+          <button type="button" class="toggleButton breed terriers" onclick="toggler(event)">
+            <h6 class="nonclick">Terriers</h4>
+          </button>
+          <button type="button" class="toggleButton breed toys" onclick="toggler(event)">
+            <h6 class="nonclick">Toys</h6>
+          </button>
+          <button type="button" class="toggleButton breed hounds" onclick="toggler(event)">
+            <h6 class="nonclick">Hounds</h6>
+          </button>
+        </div>
+        <hr />
+        <h5 class="formTitle">Preferred Environment</h5>
+        <div class="collapsecont">
+          <button type="button" class="toggleButton environment urban" onclick="toggler(event)">
+            <h6 class="nonclick">Urban</h6>
+          </button>
+          <button type="button" class="toggleButton environment rural" onclick="toggler(event)">
+            <h6 class="nonclick">Rural</h6>
+          </button>
+        </div>
+        <hr />
+        <h5 class="formTitle">Cost</h5>
+        <div class="collapsecont">
+          <button type="button" class="toggleButton cost affordable" onclick="toggler(event)">
+            <h6 class="nonclick">Affordable</h6>
+          </button>
+          <button type="button" class="toggleButton cost expensive" onclick="toggler(event)">
+            <h6 class="nonclick">Expensive</h6>
+          </button>
+        </div>
+      </div>
+
+      <div id="modaloverlay"></div>
+
+      <!-- Right hand side Catalogue -->
+
+      <div class="catalogueCont">
+
+        <!--Navbar-->
+        <nav class="navbar navbar-dark  primary-color-dark">
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="#">
+            <h1 class="display-4">DogSelector</h1>
+          </a><img id="navbaricon" src="assets/DogIcon.svg" alt="DogIcon" />
+        </nav>
+        <!--/.Navbar-->
+        <div id="catalogue">
+          <div id="catHeadCont">
+            <div class="text-center" id="catalogueHeader">
+              <h3 class="h3-responsive" id="catHeaderPC" style="margin:0px;">
+                Breeds Based on Your Selection - Select for More Information
+              </h3>
+              <h3 class="h3-responsive" id="catHeaderPhn" style="margin:0px;">
+                <i class="fas fa-search"></i> Refine Your Selection
+              </h3>
+              <h3 class="h3-responsive displaynone" id="noDogs" style="margin:0px;">
+                No dogs match your criteria, please refine your search
+              </h3>
+            </div>
+          </div>
+          <div id="catItemsCont">
+
+
+          </div>
+
+          <!-- Pictures -->
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+
+
+      <!-- Modal Content (The Image) -->
+      <div class="modaldiv">
+
+        <img class="modal-cont" id="img01">
+        <!-- The Close Button -->
+        <span class="closer">&times;</span>
+      </div>
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
+    <!--CustomJS-->
+    <script type="text/javascript" src="DogSelector.js"></script>
+</body>
+
+</html>

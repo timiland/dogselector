@@ -1,0 +1,378 @@
+
+body {
+  height: 100%;
+}
+/* Custom Pacifico Font & Navbar Stuff */
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 15px;
+}
+
+#navbaricon {
+  position: absolute;
+  left: 320px;
+  top: 20px;
+  height: 65px;
+}
+
+
+/* Selector Form */
+hr {
+  margin: 10px;
+}
+.selectorform {
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  background-color: white;
+  padding: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 15%;
+  position:fixed;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.selectorformmodal {
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  background-color: white;
+  padding: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 15%;
+  position:fixed;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+#modaloverlay {
+    z-index: 1; /* Sit on top */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+#formcloser {
+  color: white;
+  background-color: #0d47a1;
+  font-size: 30px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.formItemCont {
+  padding: 10px;
+}
+
+#formheader {
+  padding: 15px;
+  padding-top: 30px;
+  widows: 100%;
+  /* text-align: center; */
+}
+
+button.on {
+  background-color: white;
+  color: #0d47a1;
+  border: 2px solid #0d47a1;
+  cursor: pointer;
+}
+
+
+.nonclick {
+  pointer-events: none;
+}
+
+.collapsecont {
+  transition: max-height 0.2s ease-out;
+  max-height: 0;
+  display: none;
+  animation-name: zoom;
+  animation-duration: 0.3s;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.3s;
+}
+
+.displaynone {
+  display: none;
+}
+
+.formSelectionTitle {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 7px 14px;
+  margin: 14px 0px;
+  left: 50%;
+  color: white;
+  background-color: #0d47a1;
+  border-radius: 10px;
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.collapsecontlast {
+  margin-bottom: 10px;
+}
+
+.active {
+  display: 'inherit';
+}
+
+.formTitle {
+  margin-top: 10px;
+}
+
+.toggleButton {
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80%;
+  color: white;
+  background-color: #0d47a1;
+  border: 2px solid #0d47a1;
+  display: inline-block;
+  padding: 10px 20px 5px 20px;
+  margin: 10px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Catalogue */ 
+.catalogueCont {
+  padding: 0px;
+  margin-left: 15%;
+  width: 85%;
+}
+
+#catHeaderPhn {
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  background-color: #0d47a1;
+  display: none;
+  text-align: center;
+}
+
+#noDogs {
+  top: 20vh;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  background-color: lightgrey;
+  color: white;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .selectorform {
+    width: 30%;
+  }
+  .selectorformmodal {
+    width: 30%;
+  }
+  .catalogueCont {
+    width: 70%;
+    margin-left: 30%;
+  }
+}
+@media only screen and (min-width: 768px) {
+#formcloser{
+  display: none;
+}
+#modaloverlay{
+  visibility: hidden;
+  pointer-events: none;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  .selectorform {
+    width: 30%;
+    left: -30%;
+  }
+  .selectorformmodal {
+    width: 45%;
+  }
+  .catalogueCont {
+    width: 100%;
+    margin-left: 0px;
+  }
+  #catHeaderPhn {
+    display: block; 
+  }
+  #catHeaderPC {
+    display: none;
+  }
+}
+
+
+#catHeadCont {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+#catalogueHeader {
+  padding: 20px;
+}
+
+.catalogueItem {
+  cursor: pointer;
+  position: relative;
+  width: 220px;
+  height: 250px;
+  background-color: white;
+  border: 1px solid #0d47a1;
+  margin: 5px 5px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.catItemTitle {
+  position: absolute;
+  text-align: center;
+  margin-block-end: 0px;
+  width: 100%;
+  bottom: 0px;
+  padding: 7px 14px;
+  color: white;
+  background-color: #0d47a1;
+}
+
+.catalogueItem img {
+  position: absolute;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+}
+.catalogueItem img:hover {
+  position: absolute;
+  height: 83.5%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 540px) {
+  .catalogueItem {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+#catItemsCont {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto;
+  height: 600px;
+}
+
+/* Modal */
+/* Modal BG */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+@media only screen and (max-width: 540px) {
+  .modaldiv {
+    max-width: 70%;
+  }
+}
+/* Modal DIV */
+.modaldiv {
+  margin: auto;
+  display: block;
+  position: relative;
+  max-width: 70%;
+  border-radius: 10px;
+  background-color: white;
+  animation-name: zoom;
+  animation-duration: 0.5s;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.5s;
+}
+
+
+/* Modal IMG */
+.modal-cont {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  border-radius: 10px;
+  /*  background-color: white; */
+  border: 3px solid #0d47a1;
+}
+
+.closer {
+  font-size: 3rem;
+  position: absolute;
+  color: #0d47a1;
+  top: 0;
+  right: 3%;
+}
+.closer:hover,
+.closer:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
